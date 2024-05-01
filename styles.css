@@ -1,0 +1,485 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+body.default-balance::after {
+  background-image: url('images/default.jpg');
+  opacity: 80%;
+  background-size: 50%;
+  background-position: center;
+  background-position-y: 275px;
+  background-repeat: no-repeat;
+}
+
+body.positive-balance::after {
+  background-image: url('images/positivefinance.jpg');
+  background-size: 50% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: 215px;
+}
+
+body.negative-balance::after {
+  background-image: url('images/negative2.jpg');
+  background-size: 50% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: 80px;
+}
+
+#heading1 {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+#heading2 {
+  font-family: 'IM Fell Double Pica', serif;
+  text-align: left;
+  margin-left: 20px;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 2px;
+}
+
+#FinanceTracker {
+  text-align: center;
+  width: auto;
+  background-color: #314883;
+  padding: 2px;
+  color: white;
+  font-size: 30px;
+}
+
+#balance {
+  font-family: 'Averia Serif Libre', cursive;
+  text-align: center;
+  margin: auto;
+  background: transparent;
+  padding: 20px;
+  color: black;
+  backdrop-filter: blur(1.5px);
+  font-size: 20px;
+}
+
+#balance-icon {
+  color: var(--fa-primary-color);
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-heading {
+  float: left;
+}
+
+.links-wrapper {
+  display: flex;
+}
+
+.link {
+  margin-left: 10px;
+}
+
+#feedback {
+  color: #fff;
+  text-decoration: none;
+  float: right;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+#contact {
+  color: #fff;
+  text-decoration: none;
+  float: right;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#transactions {
+  text-align: right;
+  margin: 5px 45px;
+  padding-right: 25px;
+  color: black;
+  font-family: 'Averia Serif Libre', cursive;
+}
+
+#transaction-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#transaction-list li {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: #f6f1f1;
+  /* Light gray background */
+  border-radius: 5px;
+}
+
+#transaction-list li .delete-button {
+  margin-left: 5px;
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+#transaction-list li .delete-button:hover {
+  background-color: #e63a3a;
+}
+
+#transaction-form input,
+#transaction-form select,
+#transaction-form button {
+  height: 60px;
+  width: 300px;
+  margin-left: 100px;
+  background: transparent;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  color: black;
+  border: none;
+  border-radius: 5px;
+}
+
+#transaction-form input:focus,
+#transaction-form select:focus,
+#transaction-form button:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#transaction-form button {
+  background-color: #4caf50;
+  color: black;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#transaction-form button:hover {
+  background-color: rgba(19, 74, 97, 0.7);
+}
+
+#transaction-form label {
+  color: white;
+}
+
+#transaction-form option {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#transaction-form option:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.mb-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 1%;
+}
+
+#transaction-list li .transaction-details {
+  flex: 1;
+  padding: 1px;
+}
+
+#transaction-list li .transaction-amount {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+#transaction-list li .delete-button {
+  margin-left: 5px;
+}
+
+#transaction-form {
+  background: transparent;
+  min-width: 500px;
+  min-height: 350px;
+  padding: 20px;
+  border: 2px solid rgba(53, 15, 247, 0.7);
+  border-radius: 20px;
+}
+
+#transaction-form-container {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+li {
+  color: black;
+  font-size: 16px;
+}
+
+.h1size {
+  font-size: 40px;
+  color: white;
+}
+
+.texteffect {
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  min-width: 380px;
+  max-width: 380px;
+  font-family: 'IM Fell Double Pica', serif;
+}
+
+/* Existing CSS code */
+
+
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+  #FinanceTracker {
+    font-size: 20px;
+  }
+
+  #balance {
+    font-size: 16px;
+  }
+
+  #heading1 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  #heading2 {
+    font-size: 18px;
+  }
+
+  #feedback,
+  #contact {
+    font-size: 18px;
+  }
+
+  .h1size {
+    font-size: 30px;
+  }
+
+  .texteffect {
+    min-width: 300px;
+    max-width: 300px;
+    margin-top: 10px;
+  }
+
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #transaction-list {
+    margin-top: 20px;
+    width: 80%;
+  }
+
+  #transaction-form {
+    min-width: 80%;
+    min-height: 300px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Existing CSS code */
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+  /* CSS for smaller screens */
+
+  /* ... */
+}
+
+/* Responsive Design for Medium Screens (e.g., iPad) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* CSS for medium screens (e.g., iPad) */
+
+  /* ... */
+
+  #transaction-form input,
+  #transaction-form select,
+  #transaction-form button {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* Responsive Design for iPad (820x1180) */
+@media screen and (min-width: 820px) and (max-width: 1180px) {
+  /* CSS for iPad (820x1180) */
+
+  /* ... */
+
+
+  #transaction-form input,
+  #transaction-form select,
+  #transaction-form button {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* New CSS for Small, Medium, and iPad Screens */
+@media screen and (max-width: 1024px) {
+  #transaction-form .mb-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 1%;
+  }
+
+  #transaction-form input,
+  #transaction-form select,
+  #transaction-form button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #transaction-form button {
+    margin-top: 10px;
+  }
+}
+
+
+/* Existing CSS code */
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+  /* CSS for smaller screens */
+
+  /* ... */
+
+  #transaction-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #transaction-list li .transaction-details {
+    margin-right: auto;
+  }
+
+  #transaction-list li .transaction-amount {
+    margin-left: auto;
+  }
+
+  #transaction-list li .delete-button {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
+
+/* Responsive Design for Medium Screens (e.g., iPad) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* CSS for medium screens (e.g., iPad) */
+
+  /* ... */
+
+  #transaction-list li {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #transaction-list li .transaction-details {
+    margin-right: auto;
+  }
+
+  #transaction-list li .transaction-amount {
+    margin-left: 10px;
+  }
+
+  #transaction-list li .delete-button {
+    margin-left: 10px;
+    margin-top: 0;
+  }
+}
+
+/* Responsive Design for iPad Air (820x1180) */
+@media screen and (min-width: 820px) and (max-width: 1180px) {
+  /* CSS for iPad Air (820x1180) */
+
+  /* ... */
+
+  #transaction-list li {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #transaction-list li .transaction-details {
+    margin-right: auto;
+  }
+
+  #transaction-list li .transaction-amount {
+    margin-left: 10px;
+  }
+
+  #transaction-list li .delete-button {
+    margin-left: 10px;
+    margin-top: 0;
+  }
+}
+
+/* New CSS for Small, Medium, and iPad Screens */
+@media screen and (max-width: 1024px) {
+  #transaction-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #transaction-list li .transaction-details {
+    margin-right: auto;
+  }
+
+  #transaction-list li .transaction-amount {
+    margin-left: auto;
+  }
+
+  #transaction-list li .delete-button {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
